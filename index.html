@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <title>Hujjat Salaat Times</title>
+        <link type="text/css" rel="stylesheet" media="screen" href="jqtouch/jqtouch.css">
+        <link type="text/css" rel="stylesheet" media="screen" href="themes/jqt/theme.css">
+        <style type="text/css" media="screen">@import "jqt.calendar.css";</style>
+        <style type="text/css" media="screen">
+p.namaazlabel { float: left; font: bold 28px "Helvetica Neue", Helvetica; } 
+p.namaaztime { float: right; font: bold 28px "Helvetica Neue", Helvetica;}
+        </style>
+        <style type="text/css" media="screen">.nextnamaaz { color: green; }</style>
+        <script type="text/javascript" src="jqtouch/jquery-1.4.2.js"></script>
+        <script type="text/javascript" src="jqtouch/jqtouch.js"></script>
+        <script src="jqt.calendar.js" type="application/x-javascript" charset="utf-8"></script>
+        <script type="text/javascript" src="salaattimes.js"></script>
+        <script type="text/javascript">
+            var jQT = $.jQTouch({
+                icon: 'salaattimes.png'
+            });
+            $(function() {
+               insert_namaaztimes();
+               $('#any_id').getCalendar();
+            });
+        </script>
+    </head>
+    <body>
+        <div id="home">
+            <div class="toolbar">
+                <h1 id="label_date"></h1>
+            </div>
+            <ul class="edgetoedge">
+                <div><p id="label_imsaak" class="namaazlabel">Imsaak</p><p id="today_imsaak" class="namaaztime"></p><div style="clear: both;"></div></div>
+                <div><p id="label_fajr" class="namaazlabel">Fajr</p><p id="today_fajr" class="namaaztime"></p><div style="clear: both;"></div></div>
+                <div><p id="label_sunrise" class="namaazlabel">Sunrise</p><p id="today_sunrise" class="namaaztime"></p><div style="clear: both;"></div></div>                
+                <div><p id="label_zohr" class="namaazlabel">Zohr</p><p id="today_zohr" class="namaaztime"></p><div style="clear: both;"></div></div>
+                <div><p id="label_sunset" class="namaazlabel">Sunset</p><p id="today_sunset" class="namaaztime"></p><div style="clear: both;"></div></div>
+                <div><p id="label_maghrib" class="namaazlabel">Maghrib</p><p id="today_maghrib" class="namaaztime"></p><div style="clear: both;"></div></div>
+                <li class="arrow"><a href="#calendar">Calendar View</a></li>
+            </ul>
+        </div>
+        <div id="calendar">
+            <div class="toolbar">
+                <h1>Calendar</h1>
+                <a class="button back" href="#home">Back</a>
+            </div>
+            <div id="any_id">
+		<ul id="the_calendar">
+		</ul>
+        </div>
+    </body>
+</html>
